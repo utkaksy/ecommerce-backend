@@ -3,11 +3,22 @@ using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 
-Console.WriteLine("Hello, World!");
+//ProductTest();
 
-ProductManager productManager = new ProductManager(new EfProductDal());
-
-foreach (var product in productManager.GetByUnitPrice(50,100))
+CategoryManager CategoryManager = new CategoryManager(new EfCategoryDal());
+foreach (var category in CategoryManager.GetAll())
 {
-    Console.WriteLine(product.ProductName);
+    Console.WriteLine(category.CategoryName);
+}
+
+static void ProductTest()
+{
+    Console.WriteLine("Hello, World!");
+
+    ProductManager productManager = new ProductManager(new EfProductDal());
+
+    foreach (var product in productManager.GetByUnitPrice(50, 100))
+    {
+        Console.WriteLine(product.ProductName);
+    }
 }
