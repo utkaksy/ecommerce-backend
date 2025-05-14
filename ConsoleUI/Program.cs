@@ -32,8 +32,8 @@ static void ProductTest()
 
 static void CategoryTest()
 {
-    CategoryManager CategoryManager = new CategoryManager(new EfCategoryDal());
-    foreach (var category in CategoryManager.GetAll())
+    CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+    foreach (var category in categoryManager.GetAll().Data)
     {
         Console.WriteLine(category.CategoryName);
     }
