@@ -18,12 +18,12 @@ namespace Business.Concrete
             _categoryDal = categoryDal;
         }
 
-        public IResult Add(Category product)
+        public IResult Add(Category category)
         {
             throw new NotImplementedException();
         }
 
-        public IResult Delete(Category product)
+        public IResult Delete(Category category)
         {
             throw new NotImplementedException();
         }
@@ -33,12 +33,12 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Category>>(_categoryDal.GetAll());
         }
 
-        public IDataResult<Category> GetById(int productId)
+        public IDataResult<Category> GetById(int categoryId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Category>(_categoryDal.Get(c => c.CategoryId == categoryId));
         }
 
-        public IResult Update(Category product)
+        public IResult Update(Category category)
         {
             throw new NotImplementedException();
         }
